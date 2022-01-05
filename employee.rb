@@ -16,11 +16,11 @@ class Employee
   attr_reader :first_name, :last_name, :salary, :active
   attr_writer :active
 
-  def initialize(input_first_name, input_last_name, input_salary, input_active)
-    @first_name = input_first_name
-    @last_name = input_last_name
-    @salary = input_salary
-    @active = input_active
+  def initialize(options_hash)
+    @first_name = options_hash[:first_name]
+    @last_name = options_hash[:last_name]
+    @salary = options_hash[:salary]
+    @active = options_hash[:active]
   end
   
   def print_info
@@ -32,11 +32,11 @@ class Employee
   end
 end
 
-employee1 = Employee.new("Peter", "Jang", 40000, true)
-employee2 = Employee.new("Jay", "Wengrow", 100000, true)
+employee1 = Employee.new({first_name: "Peter", last_name: "Jang", salary: 40000, active: true})
+employee2 = Employee.new(first_name: "Jay", last_name: "Wengrow", salary: 100000, active: true)
 # p employee1
-# employee1.print_info
-# employee2.print_info
+employee1.print_info
+employee2.print_info
 # # puts employee1.give_annual_raise
 # puts employee1.first_name
 # puts employee1.last_name
