@@ -22,6 +22,11 @@ employee1 = Employee.new({first_name: "Peter", last_name: "Jang", salary: 40000,
 employee2 = Employee.new(first_name: "Jay", last_name: "Wengrow", salary: 100000, active: true)
 
 class Manager < Employee
+  def initialize(options_hash)
+    super
+    @employees = options_hash[:employees]
+  end
+
   def send_report
     puts "Sending email..."
     # use some email sending library
@@ -29,6 +34,6 @@ class Manager < Employee
   end
 end
 
-manager = Manager.new(first_name: "Dani", last_name: "Zaghian", salary: 500000, active: true)
+manager = Manager.new(first_name: "Dani", last_name: "Zaghian", salary: 500000, active: true, employees: [employee1, employee2])
 manager.print_info
 manager.send_report
