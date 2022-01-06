@@ -22,6 +22,8 @@ employee1 = Employee.new({first_name: "Peter", last_name: "Jang", salary: 40000,
 employee2 = Employee.new(first_name: "Jay", last_name: "Wengrow", salary: 100000, active: true)
 
 class Manager < Employee
+  attr_accessor :employees
+  
   def initialize(options_hash)
     super
     @employees = options_hash[:employees]
