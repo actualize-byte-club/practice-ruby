@@ -11,23 +11,25 @@
 # puts "#{employee2[:first_name]} #{employee2[:last_name]} makes #{employee2[:salary]} a year."
 
 # Represent an employee as a class instance
-class Employee
-
-  attr_reader :first_name, :last_name, :salary, :active
-  attr_writer :active
-
-  def initialize(options_hash)
-    @first_name = options_hash[:first_name]
-    @last_name = options_hash[:last_name]
-    @salary = options_hash[:salary]
-    @active = options_hash[:active]
-  end
+module Actualize
+  class Employee
   
-  def print_info
-    puts "#{first_name} #{last_name} makes #{@salary} a year."
-  end
-
-  def give_annual_raise
-    @salary = @salary * 1.05
-  end
+    attr_reader :first_name, :last_name, :salary, :active
+    attr_writer :active
+  
+    def initialize(options_hash)
+      @first_name = options_hash[:first_name]
+      @last_name = options_hash[:last_name]
+      @salary = options_hash[:salary]
+      @active = options_hash[:active]
+    end
+    
+    def print_info
+      puts "#{first_name} #{last_name} makes #{@salary} a year."
+    end
+  
+    def give_annual_raise
+      @salary = @salary * 1.05
+    end
+  end  
 end
